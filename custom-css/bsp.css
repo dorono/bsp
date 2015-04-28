@@ -1,0 +1,335 @@
+/* FONTS */
+/* FONT COLORS */
+/* BACKGROUND COLORS */
+/* BREAKPOINTS */
+/* newsletter signup */
+/* MISC */
+@font-face {
+  font-family: "Cabin";
+  src: url('/fonts/normal');
+  src: url('/fonts/normal?#iefix') format('embedded-opentype'), url(/wp-content/themes/responz/fonts/cabin-regular-webfont.woff) format('woff'), url(/wp-content/themes/responz/fonts/cabin-regular-webfont.ttf) format('truetype'), url(/wp-content/themes/responz/fonts/cabin-regular-webfont.svg) format('svg'), url(/wp-content/themes/responz/fonts/cabin-regular-webfont.eot) format('embedded-opentype');
+  font-weight: normal;
+}
+/* line 59, ../../sass/_bsp.scss */
+body {
+  background-image: none;
+  color: #333;
+  font-family: Cabin, Arial, sans-serif;
+  font-size: 17px;
+}
+/* line 68, ../../sass/_bsp.scss */
+body.page-template-thank-you iframe {
+  border: 0;
+  height: 575px;
+  width: 100%;
+}
+/* line 75, ../../sass/_bsp.scss */
+body hgroup {
+  max-height: 150px;
+  overflow: hidden;
+}
+/* line 79, ../../sass/_bsp.scss */
+body hgroup #header-widget-1 {
+  width: 17%;
+}
+/* line 83, ../../sass/_bsp.scss */
+body hgroup #header-widget-2 {
+  width: 16%;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+}
+/* line 90, ../../sass/_bsp.scss */
+body hgroup #header-widget-2 ul {
+  list-style: none;
+}
+/* line 93, ../../sass/_bsp.scss */
+body hgroup #header-widget-2 ul li {
+  border: 0;
+  color: #dfe3e5;
+  font-size: 14px;
+  line-height: 1.3em;
+  margin: 0;
+  padding: 0;
+}
+/* line 104, ../../sass/_bsp.scss */
+body hgroup #site-logo {
+  width: 100%;
+}
+/* line 109, ../../sass/_bsp.scss */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5 {
+  font-family: Cabin, Arial, sans-serif;
+}
+/* line 117, ../../sass/_bsp.scss */
+body h1 {
+  background-color: #ece083;
+  border-radius: 7px;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 10px;
+}
+/* line 130, ../../sass/_bsp.scss */
+body h3 {
+  border-color: #333;
+  border-style: dotted;
+  border-width: 1px 0;
+  font-family: Cabin, Arial, sans-serif;
+  font-weight: bold;
+  margin: 41px 0 10px 0;
+  padding: 5px 0;
+}
+/* line 143, ../../sass/_bsp.scss */
+body h3:first-of-type {
+  margin-top: 20px;
+}
+/* line 148, ../../sass/_bsp.scss */
+body h4 {
+  border-style: dotted;
+  border-width: 1px 0 0;
+  padding: 10px 0 0;
+}
+/* line 156, ../../sass/_bsp.scss */
+body p {
+  font-size: 17px;
+  line-height: 1.5em;
+}
+/* line 162, ../../sass/_bsp.scss */
+body footer .col3-1 {
+  height: 75px;
+}
+/* line 166, ../../sass/_bsp.scss */
+body footer .col3-1 #social-widget-3 h4 {
+  text-align: right;
+}
+/* line 172, ../../sass/_bsp.scss */
+body footer .footer-nav-wrap {
+  float: none;
+}
+/* line 175, ../../sass/_bsp.scss */
+body footer .footer-nav-wrap .footer-nav {
+  margin: 0;
+}
+/* line 178, ../../sass/_bsp.scss */
+body footer .footer-nav-wrap .footer-nav a {
+  font-family: Cabin, Arial, sans-serif;
+  text-transform: none;
+  text-decoration: underline;
+  font-size: 14px;
+}
+/* line 184, ../../sass/_bsp.scss */
+body footer .footer-nav-wrap .footer-nav a:hover {
+  text-decoration: none;
+}
+/* line 191, ../../sass/_bsp.scss */
+body footer .footer-text {
+  float: none;
+  text-align: left;
+}
+/* line 198, ../../sass/_bsp.scss */
+body ul li {
+  font-size: 17px;
+  line-height: 1.5em;
+}
+/* line 204, ../../sass/_bsp.scss */
+body .checkout-form {
+  text-align: center;
+}
+/* line 208, ../../sass/_bsp.scss */
+body #content {
+  background: #fff;
+}
+/* line 212, ../../sass/_bsp.scss */
+body #contentwrap,
+body #sidebar {
+  padding-top: 20px;
+}
+/* line 217, ../../sass/_bsp.scss */
+body .doron_headshot {
+  border: #000 1px solid;
+  display: block;
+  margin-top: 10px;
+}
+/* line 224, ../../sass/_bsp.scss */
+body .entry-content .testimonials {
+  margin-bottom: 15px;
+}
+/* line 230, ../../sass/_bsp.scss */
+body #headerwrap #header {
+  border: 0;
+  height: auto;
+}
+/* line 234, ../../sass/_bsp.scss */
+body #headerwrap #header .header-widget {
+  float: left;
+  position: relative;
+  top: 0;
+}
+/* line 240, ../../sass/_bsp.scss */
+body #headerwrap #header #site-logo {
+  padding-top: 0;
+  position: relative;
+  top: 0;
+}
+/* line 245, ../../sass/_bsp.scss */
+body #headerwrap #header #site-logo a {
+  color: #9CCFEE;
+  font-style: normal;
+}
+/* line 251, ../../sass/_bsp.scss */
+body #headerwrap #header #site-logo a span {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  /* line 245, ../../sass/_bsp.scss */
+  body #headerwrap #header #site-logo a {
+    font-size: 38px;
+  }
+}
+/* line 259, ../../sass/_bsp.scss */
+body #headerwrap #header #site-logo a img {
+  display: block;
+}
+@media screen and (max-width: 760px) {
+  /* line 267, ../../sass/_bsp.scss */
+  body .hide-mobile {
+    display: none;
+  }
+}
+/* line 273, ../../sass/_bsp.scss */
+body #nav-bar {
+  display: none;
+}
+/* line 277, ../../sass/_bsp.scss */
+body .post {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  /* line 280, ../../sass/_bsp.scss */
+  body .post .post-content {
+    clear: both;
+  }
+}
+/* line 287, ../../sass/_bsp.scss */
+body #sidebar {
+  font-size: 14px;
+}
+/* line 291, ../../sass/_bsp.scss */
+body #sidebar h4.widgettitle {
+  background: #000;
+  color: #fff;
+  font-family: Cabin, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.3em;
+  padding: 7px;
+}
+/* line 304, ../../sass/_bsp.scss */
+body #sidebar table {
+  line-height: 1.45em;
+  text-align: center;
+}
+/* line 308, ../../sass/_bsp.scss */
+body #sidebar table h3 {
+  font-size: 16px;
+  margin-top: 0;
+}
+@media screen and (max-width: 980px) {
+  /* line 308, ../../sass/_bsp.scss */
+  body #sidebar table h3 {
+    font-size: 12px;
+  }
+}
+/* line 318, ../../sass/_bsp.scss */
+body #sidebar .widget {
+  margin: 0 0 20px;
+}
+/* line 321, ../../sass/_bsp.scss */
+body #sidebar .widget .promo {
+  background: #ece083;
+  font-style: normal;
+}
+/* line 325, ../../sass/_bsp.scss */
+body #sidebar .widget .promo a {
+  background: #36b42c;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 7px 9px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px #000;
+  text-transform: uppercase;
+}
+/* line 341, ../../sass/_bsp.scss */
+body #sidebar .widget .promo ul {
+  font-weight: bold;
+  margin: 1em 0 10px 24px;
+}
+/* line 345, ../../sass/_bsp.scss */
+body #sidebar .widget .promo ul li {
+  border: 0;
+  font-size: 15px;
+  display: list-item;
+  list-style: disc;
+}
+/* line 353, ../../sass/_bsp.scss */
+body #sidebar .widget .promo .testimonial-in-promo {
+  border: solid #333;
+  border-width: 1px 0;
+  font-style: italic;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+/* line 364, ../../sass/_bsp.scss */
+body .social_icons {
+  margin-bottom: 10px;
+}
+/* line 367, ../../sass/_bsp.scss */
+body .social_icons p {
+  position: relative;
+}
+/* line 370, ../../sass/_bsp.scss */
+body .social_icons p span {
+  font-size: 17px;
+  position: absolute;
+  left: 99px;
+  top: 6px;
+}
+/* line 380, ../../sass/_bsp.scss */
+body .testimonials {
+  background-color: #dfe3e5;
+  border: #000 2px dotted;
+  border-radius: 5px;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.4em;
+  padding: 10px;
+  text-align: left;
+}
+/* line 392, ../../sass/_bsp.scss */
+body .testimonials img {
+  float: left;
+  margin: 0 10px 0 0;
+  border: #000 1px solid;
+}
+/* line 398, ../../sass/_bsp.scss */
+body .testimonials h2 {
+  margin-top: 0;
+  font-family: Cabin, Arial, sans-serif;
+}
+/* line 403, ../../sass/_bsp.scss */
+body .testimonials h4 {
+  margin: 0;
+}
+/* line 408, ../../sass/_bsp.scss */
+body .view_cart_btn {
+  display: none;
+}
