@@ -17,12 +17,12 @@
  *  Stylesheets and Javascript files are enqueued in theme-functions.php
  */
 ?>
+<?php if(is_page( 2397 )) {  ?>
 
-<!-- wp_header -->
-<?php wp_head(); ?>
+	<!-- only track Thank You page visits once -->
+	<script src="<?php bloginfo('template_url'); ?>/js/disable-tracking.js"></script>
 
-
-<?php if(is_page( 2397 )) { // facebook conversion tracking code ?>
+	<!-- Facebook conversion tracking code -->
 	<script type="text/javascript">
 		var fb_param = {};
 		fb_param.pixel_id = '6006642379059';
@@ -36,7 +36,11 @@
 		})();
 	</script>
 	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6006642379059&amp;value=0" /></noscript>
+
 <?php } ?>
+
+<!-- wp_header -->
+<?php wp_head(); ?>
 
 
 </head>

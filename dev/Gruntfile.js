@@ -100,7 +100,16 @@ module.exports = function(grunt) {
                 dot: true,
                 cwd: '<%= config.jsSrc %>',
                 dest: '<%= config.app %>/<%= config.jsDest %>',
-                src: ['**/*.js', '!*.js']
+                src: ['**/*.js', '!*.js', '!<%= config.jsSrc %>/disable-tracking.js']
+            },
+
+            disableTracking: {
+                files: [{
+                    cwd: '<%= config.jsSrc %>',
+                    dest: '<%= config.app %>/<%= config.jsDest %>',
+                    src: 'disable-tracking.js',
+                    expand: true
+                }]
             }
         },
 
@@ -131,7 +140,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: '<%= config.jsSrc %>/**/*.js',
-                tasks: ['jshint', 'concat', 'copy:scripts']
+                tasks: ['jshint', 'concat', 'copy:scripts', 'copy:disableTracking']
             }
         }
     });

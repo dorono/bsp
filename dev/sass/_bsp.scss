@@ -207,6 +207,13 @@ body {
 
     #content {
         background: $bgcolor-1;
+
+        h3 {
+            background: $bgcolor-2;
+            border: none;
+            color: $bgcolor-5;
+            padding: 2px 12px;
+        }
     }
 
     #contentwrap,
@@ -222,6 +229,8 @@ body {
 
     .entry-content {
         .testimonials {
+            border-bottom: dotted $general-outline;
+            border-bottom-width: 1px;
             margin-bottom: 15px;
         }
     }
@@ -378,9 +387,11 @@ body {
     }
 
     .testimonials {
-        background-color: $bgcolor-3;
-        border: $general-outline 2px dotted;
-        border-radius: 5px;
+        // background-color: $bgcolor-3;
+        // border: $general-outline 2px dotted;
+        // border-radius: 5px;
+        border: $general-outline dotted;
+        border-width: 1px 0 0;
         font: {
             size: 15px;
             style: italic;
