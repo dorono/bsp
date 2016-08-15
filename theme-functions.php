@@ -52,6 +52,9 @@ function themify_theme_enqueue_scripts(){
 		'isTouch' => themify_is_touch()? 'true': 'false',
 	));
 
+
+	wp_enqueue_script( 'custom-script', THEME_URI . '/js/bsp.js' );
+
 	//WordPress internal script to move the comment box to the right place when replying to a user
 	if ( is_single() || is_page() ) wp_enqueue_script( 'comment-reply' );
 
