@@ -201,6 +201,10 @@ body {
         }
     }
 
+    .buy-btn {
+      text-align: center;
+    }
+
     .checkout-form {
         text-align: center;
     }
@@ -239,7 +243,7 @@ body {
         #header {
             border: 0;
             height: auto;
-            
+
             .header-widget {
                 float: left;
                 position: relative;
@@ -264,7 +268,7 @@ body {
                     @media screen and (max-width: $medium-small) {
                         font-size: 38px;
                     }
-                    
+
                     img {
                         display: block;
                     }
@@ -330,7 +334,7 @@ body {
             .promo {
                 background: $bgcolor-5;
                 font-style: normal;
-                
+
                 a {
                     background: #36b42c;
                     border-radius: 5px;
