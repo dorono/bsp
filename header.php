@@ -8,15 +8,15 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
 <!-- reset viewport for mobile -->
-
+	
 <meta property="og:url"           content="http://www.bestsaxophonewebsiteever.com/bulletproof-saxophone-playing" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="<?php wp_title(); ?>" />
 <meta property="og:description"   content="<? echo get_bloginfo( 'description' ); ?>" />
-<meta property="og:image"         content="http://www.bulletproofsaxophoneplaying.com/wp-content/uploads/bsp-website-product-img.jpg" />
+<meta property="og:image"         content="http://www.bulletproofsaxophoneplaying.com/wp-content/uploads/bsp-website-product-img.jpg" />	
 <!-- <meta property="fb:app_id" content="203897113733044" /> -->
 
-
+	
 <link rel="canonical" href="http://www.bestsaxophonewebsiteever.com/bulletproof-saxophone-playing">
 <title itemprop="name"><?php wp_title(); ?></title>
 
@@ -26,8 +26,8 @@
  */
 ?>
 
-
-
+	
+	
 <!-- wp_header -->
 <?php wp_head(); ?>
 
@@ -60,10 +60,10 @@ src="https://www.facebook.com/tr?id=909075279152522&ev=PageView&noscript=1"
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=203897113733044&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+	
 
-
-
-
+	
+	
 <?php themify_body_start(); //hook ?>
 <div id="pagewrap" class="hfeed site">
 

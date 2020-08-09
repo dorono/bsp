@@ -5,7 +5,7 @@ if( themify_get( 'setting-disable_responsive_design' ) == 'on' ) {
 }
 
 /*
-To add custom PHP functions to the theme, create a new 'custom-functions.php' file in the theme folder.
+To add custom PHP functions to the theme, create a new 'custom-functions.php' file in the theme folder. 
 They will be added to the theme automatically.
 */
 
@@ -13,29 +13,29 @@ They will be added to the theme automatically.
 /***************************************************************************/
 add_action( 'wp_enqueue_scripts', 'themify_theme_enqueue_scripts', 11 );
 function themify_theme_enqueue_scripts(){
-
+	
 	///////////////////
 	//Enqueue styles
 	///////////////////
-
+	
 	//Themify base styling
 	wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array(), wp_get_theme()->display('Version'));
-
+	
 	//Themify Media Queries CSS
 	wp_enqueue_style( 'themify-media-queries', THEME_URI . '/media-queries.css');
 
 
 	wp_enqueue_style(
-		'bsp',
+		'bswe',
 		get_template_directory_uri() . '/custom-css/bsp.css');
 
 	//Google Web Fonts embedding
 	wp_enqueue_style( 'google-fonts', themify_https_esc('http://fonts.googleapis.com/css'). '?family=Arapey:400italic,400&subset=latin,latin-ext');
-
+	
 	///////////////////
 	//Enqueue scripts
 	///////////////////
-
+		
     //Carousel script
     wp_enqueue_script( 'carousel', THEME_URI . '/js/carousel.js', array('jquery'), false, true );
 
@@ -44,20 +44,17 @@ function themify_theme_enqueue_scripts(){
 
 	//Themify Gallery
 	wp_enqueue_script( 'themify-gallery', THEMIFY_URI . '/js/themify.gallery.js', array('jquery'), false, true );
-
+	
 	//Inject variable values in gallery script
 	wp_localize_script( 'theme-script', 'themifyScript', array(
 		'lightbox' => themify_lightbox_vars_init(),
 		'lightboxContext' => apply_filters('themify_lightbox_context', '#pagewrap'),
 		'isTouch' => themify_is_touch()? 'true': 'false',
 	));
-
-
-	wp_enqueue_script( 'custom-script', THEME_URI . '/js/bsp.js' );
-
+	
 	//WordPress internal script to move the comment box to the right place when replying to a user
 	if ( is_single() || is_page() ) wp_enqueue_script( 'comment-reply' );
-
+		
 }
 
 /**
@@ -70,7 +67,7 @@ function themify_ie_enhancements(){
 	<!--[if lt IE 9]>
 		<script src="' . THEME_URI . '/js/respond.js"></script>
 	<![endif]-->
-
+	
 	<!-- html5.js -->
 	<!--[if lt IE 9]>
 		<script src="'.themify_https_esc('http://html5shim.googlecode.com/svn/trunk/html5.js').'"></script>
@@ -92,13 +89,13 @@ add_action( 'wp_head', 'themify_viewport_tag' );
 add_filter('themify_default_layout', create_function('$class', "return 'sidebar2';"));
 
 /**
- * Make IE behave like a standards-compliant browser
+ * Make IE behave like a standards-compliant browser 
  */
 function themify_ie_standards_compliant() {
 	echo '
 	<!--[if lt IE 9]>
 	<script src="'.themify_https_esc('http://s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js').'"></script>
-	<script type="text/javascript" src="'.themify_https_esc('http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js').'"></script>
+	<script type="text/javascript" src="'.themify_https_esc('http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js').'"></script> 
 	<![endif]-->
 	';
 }
@@ -110,15 +107,15 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 	///////////////////////////////////////
 	// Setup Write Panel Options
 	///////////////////////////////////////
-
+	
 	// Post Meta Box Options
 	$post_meta_box_options = array(
 		// Layout
 		array(
-			  "name" 		=> "layout",
-			  "title" 		=> __('Sidebar Option', 'themify'),
-			  "description" => "",
-			  "type" 		=> "layout",
+			  "name" 		=> "layout",	
+			  "title" 		=> __('Sidebar Option', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "layout",			
 		'show_title' => true,
 			  "meta"		=> array(
 				array("value" => "default", "img" => "images/layout-icons/default.png", "selected" => true, 'title' => __('Default', 'themify')),
@@ -128,7 +125,7 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 				array('value' => 'sidebar1', 'img' => 'images/layout-icons/sidebar1.png', 'title' => __('Sidebar Right', 'themify')),
 				array('value' => 'sidebar1 sidebar-left', 'img' => 'images/layout-icons/sidebar1-left.png', 'title' => __('Sidebar Left', 'themify')),
 				array('value' => 'sidebar-none', 'img' => 'images/layout-icons/sidebar-none.png', 'title' => __('No Sidebar ', 'themify'))
-				)
+				)			
 			),
 		// Content Width
 		array(
@@ -168,97 +165,97 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			),
 		// Image Width
 		array(
-			  "name" 		=> "image_width",
-			  "title" 		=> __('Image Width', 'themify'),
-			  "description" => "",
-			  "type" 		=> "textbox",
-			  "meta"		=> array("size"=>"small")
+			  "name" 		=> "image_width",	
+			  "title" 		=> __('Image Width', 'themify'), 
+			  "description" => "", 				
+			  "type" 		=> "textbox",			
+			  "meta"		=> array("size"=>"small")			
 			),
 		// Image Height
 		array(
-			  "name" 		=> "image_height",
-			  "title" 		=> __('Image Height', 'themify'),
-			  "description" => __('Enter height = 0 to disable vertical cropping with img.php enabled', 'themify'),
-			  "type" 		=> "textbox",
-			  "meta"		=> array("size"=>"small")
+			  "name" 		=> "image_height",	
+			  "title" 		=> __('Image Height', 'themify'), 
+			  "description" => __('Enter height = 0 to disable vertical cropping with img.php enabled', 'themify'), 				
+			  "type" 		=> "textbox",			
+			  "meta"		=> array("size"=>"small")			
 			),
 		// Hide Post Title
 		array(
-			  "name" 		=> "hide_post_title",
-			  "title" 		=> __('Hide Post Title', 'themify'),
-			  "description" => "",
-			  "type" 		=> "dropdown",
+			  "name" 		=> "hide_post_title",	
+			  "title" 		=> __('Hide Post Title', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 					array("value" => "default", "name" => "", "selected" => true),
 					array("value" => "yes", 'name' => __('Yes', 'themify')),
 					array("value" => "no",	'name' => __('No', 'themify'))
-				)
+				)			
 			),
 		// Unlink Post Title
 		array(
-			  "name" 		=> "unlink_post_title",
-			  "title" 		=> __('Unlink Post Title', 'themify'),
-			  "description" => __('Unlink post title (it will display the post title without link)', 'themify'),
-			  "type" 		=> "dropdown",
+			  "name" 		=> "unlink_post_title",	
+			  "title" 		=> __('Unlink Post Title', 'themify'), 	
+			  "description" => __('Unlink post title (it will display the post title without link)', 'themify'), 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 
 		// Hide Post Meta
 		array(
-			  "name" 		=> "hide_post_meta",
-			  "title" 		=> __('Hide Post Meta', 'themify'),
-			  "description" => "",
-			  "type" 		=> "dropdown",
+			  "name" 		=> "hide_post_meta",	
+			  "title" 		=> __('Hide Post Meta', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Hide Post Date
 		array(
-			  "name" 		=> "hide_post_date",
-			  "title" 		=> __('Hide Post Date', 'themify'),
-			  "description" => "",
-			  "type" 		=> "dropdown",
+			  "name" 		=> "hide_post_date",	
+			  "title" 		=> __('Hide Post Date', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Hide Post Image
 		array(
-			  "name" 		=> "hide_post_image",
-			  "title" 		=> __('Hide Featured Image', 'themify'),
-			  "description" => "",
-			  "type" 		=> "dropdown",
+			  "name" 		=> "hide_post_image",	
+			  "title" 		=> __('Hide Featured Image', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Unlink Post Image
 		array(
-			  "name" 		=> "unlink_post_image",
-			  "title" 		=> __('Unlink Featured Image', 'themify'),
-			  "description" => __('Display the Featured Image without link', 'themify'),
-			  "type" 		=> "dropdown",
+			  "name" 		=> "unlink_post_image",	
+			  "title" 		=> __('Unlink Featured Image', 'themify'), 	
+			  "description" => __('Display the Featured Image without link', 'themify'), 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Video URL
 		array(
@@ -270,17 +267,17 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			),
 		// External Link
 		array(
-			  "name" 		=> "external_link",
-			  "title" 		=> __('External Link', 'themify'),
-			  "description" => __('Link Featured Image to external URL', 'themify'),
-			  "type" 		=> "textbox",
-			  "meta"		=> array()
+			  "name" 		=> "external_link",	
+			  "title" 		=> __('External Link', 'themify'), 	
+			  "description" => __('Link Featured Image to external URL', 'themify'), 				
+			  "type" 		=> "textbox",			
+			  "meta"		=> array()			
 			),
 	// Lightbox Link + Zoom icon
 	themify_lightbox_link_field()
 	);
-
-
+								
+	
 	// Page Meta Box Options
 	$page_meta_box_options = array(
 	  	// Page Layout
@@ -326,13 +323,13 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			  "name" 		=> "hide_page_title",
 			  "title"		=> __('Hide Page Title', 'themify'),
 			  "description"	=> "",
-			  "type" 		=> "dropdown",
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )	
 			),
 		// Custom menu for page
         array(
@@ -394,16 +391,16 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 		),
 		// Section Categories
 		array(
-			  "name" 		=> "section_categories",
-			  "title" 		=> __('Section Categories', 'themify'),
-			  "description" => __('Display multiple query categories separately', 'themify'),
-			  "type" 		=> "dropdown",
+			  "name" 		=> "section_categories",	
+			  "title" 		=> __('Section Categories', 'themify'), 	
+			  "description" => __('Display multiple query categories separately', 'themify'), 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Post Layout
 		array(
@@ -430,7 +427,7 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			  "type"		=> "textbox",
 			  "meta"		=> array("size" => "small")
 			),
-
+		
 		// Display Content
 		array(
 			  "name" 		=> "display_content",
@@ -452,26 +449,26 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			),
 		// Image Width
 		array(
-			  "name" 		=> "image_width",
-			  "title" 		=> __('Image Width', 'themify'),
-			  "description" => "",
-			  "type" 		=> "textbox",
-			  "meta"		=> array("size"=>"small")
+			  "name" 		=> "image_width",	
+			  "title" 		=> __('Image Width', 'themify'), 
+			  "description" => "", 				
+			  "type" 		=> "textbox",			
+			  "meta"		=> array("size"=>"small")			
 			),
 		// Image Height
 		array(
-			  "name" 		=> "image_height",
-			  "title" 		=> __('Image Height', 'themify'),
-			  "description" => __('Enter height = 0 to disable vertical cropping with img.php enabled', 'themify'),
-			  "type" 		=> "textbox",
-			  "meta"		=> array("size"=>"small")
+			  "name" 		=> "image_height",	
+			  "title" 		=> __('Image Height', 'themify'), 
+			  "description" => __('Enter height = 0 to disable vertical cropping with img.php enabled', 'themify'), 				
+			  "type" 		=> "textbox",			
+			  "meta"		=> array("size"=>"small")			
 			),
 		// Hide Title
 		array(
 			  "name" 		=> "hide_title",
 			  "title"		=> __('Hide Post Title', 'themify'),
 			  "description"	=> "",
-			  "type" 		=> "dropdown",
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
@@ -481,23 +478,23 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			),
 		// Unlink Post Title
 		array(
-			  "name" 		=> "unlink_title",
-			  "title" 		=> __('Unlink Post Title', 'themify'),
-			  "description" => __('Unlink post title (it will display the post title without link)', 'themify'),
-			  "type" 		=> "dropdown",
+			  "name" 		=> "unlink_title",	
+			  "title" 		=> __('Unlink Post Title', 'themify'), 	
+			  "description" => __('Unlink post title (it will display the post title without link)', 'themify'), 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Hide Post Date
 		array(
 			  "name" 		=> "hide_date",
 			  "title"		=> __('Hide Post Date', 'themify'),
 			  "description"	=> "",
-			  "type" 		=> "dropdown",
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
@@ -510,7 +507,7 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			  "name" 		=> "hide_meta",
 			  "title"		=> __('Hide Post Meta', 'themify'),
 			  "description"	=> "",
-			  "type" 		=> "dropdown",
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
@@ -520,36 +517,36 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			),
 		// Hide Post Image
 		array(
-			  "name" 		=> "hide_image",
-			  "title" 		=> __('Hide Featured Image', 'themify'),
-			  "description" => "",
-			  "type" 		=> "dropdown",
+			  "name" 		=> "hide_image",	
+			  "title" 		=> __('Hide Featured Image', 'themify'), 	
+			  "description" => "", 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Unlink Post Image
 		array(
-			  "name" 		=> "unlink_image",
-			  "title" 		=> __('Unlink Featured Image', 'themify'),
-			  "description" => __('Display the Featured Image without link', 'themify'),
-			  "type" 		=> "dropdown",
+			  "name" 		=> "unlink_image",	
+			  "title" 		=> __('Unlink Featured Image', 'themify'), 	
+			  "description" => __('Display the Featured Image without link', 'themify'), 				
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
 									 array("value" => "yes", 'name' => __('Yes', 'themify')),
 									 array("value" => "no",	'name' => __('No', 'themify'))
-									 )
+									 )			
 			),
 		// Page Navigation Visibility
 		array(
 			  "name" 		=> "hide_navigation",
 			  "title"		=> __('Hide Page Navigation', 'themify'),
 			  "description"	=> "",
-			  "type" 		=> "dropdown",
+			  "type" 		=> "dropdown",			
 			  "meta"		=> array(
 			  						array("value" => "default", "name" => "", "selected" => true),
 
@@ -557,9 +554,9 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 									 array("value" => "no",	'name' => __('No', 'themify'))
 									 )
 			)
-
+		
 	);
-
+								 
 	///////////////////////////////////////
 	// Build Write Panels
 	///////////////////////////////////////
@@ -571,29 +568,29 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			 "pages"	=> "post"					// Pages to show write panel
 			 ),
 		array(
-			 "name"		=> __('Page Options', 'themify'),
+			 "name"		=> __('Page Options', 'themify'),	
 			'id' => 'page-options',
-			 "options"	=> $page_meta_box_options,
+			 "options"	=> $page_meta_box_options, 		
 			 "pages"	=> "page"
 			 ),
 		array(
-			"name"		=> __('Query Posts', 'themify'),
+			"name"		=> __('Query Posts', 'themify'),	
 			'id' => 'query-posts',
-			"options"	=> $query_post_meta_box_options,
+			"options"	=> $query_post_meta_box_options, 		
 			"pages"	=> "page"
 			)
 		)
 	);
-
+	
 /* 	Custom Functions
 /***************************************************************************/
-
+	
 	///////////////////////////////////////
 	// Enable WordPress feature image
 	///////////////////////////////////////
 	add_theme_support( 'post-thumbnails' );
 	remove_post_type_support( 'page', 'thumbnail' );
-
+	
 	// Register Custom Menu Function
 	function themify_register_custom_nav() {
 		if (function_exists('register_nav_menus')) {
@@ -604,10 +601,10 @@ add_action('wp_head', 'themify_ie_standards_compliant');
 			) );
 		}
 	}
-
+	
 	// Register Custom Menu Function - Action
 	add_action('init', 'themify_register_custom_nav');
-
+	
 	// Default Main Nav Function
 	function themify_default_main_nav() {
 		echo '<ul id="main-nav" class="clearfix">';
@@ -730,7 +727,7 @@ if( ! function_exists('themify_theme_comment') ) {
 	 * @since 1.0.0
 	 */
 	function themify_theme_comment($comment, $args, $depth) {
-	   $GLOBALS['comment'] = $comment;
+	   $GLOBALS['comment'] = $comment; 
 	   ?>
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 			<p class="comment-author">
@@ -742,7 +739,7 @@ if( ! function_exists('themify_theme_comment') ) {
 				<?php if ($comment->comment_approved == '0') : ?>
 				<p><em><?php _e('Your comment is awaiting moderation.', 'themify') ?></em></p>
 				<?php endif; ?>
-
+			
 				<?php comment_text() ?>
 			</div>
 			<p class="reply"><?php comment_reply_link(array_merge( $args, array('add_below' => 'comment', 'depth' => $depth, 'reply_text' => __( 'Reply', 'themify' ), 'max_depth' => $args['max_depth']))) ?></p>
@@ -754,3 +751,5 @@ if( ! function_exists('themify_theme_comment') ) {
 add_filter('widget_text', 'do_shortcode');
 
 ?>
+
+

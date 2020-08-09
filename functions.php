@@ -9,6 +9,7 @@
  * 						http://themify.me
  *
  ***************************************************************************/
+
 $theme_includes = apply_filters( 'themify_theme_includes',
 	array(	'themify/themify-database.php',
 			'themify/class-themify-config.php',
