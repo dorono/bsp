@@ -8,15 +8,15 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
 <!-- reset viewport for mobile -->
-	
+
 <meta property="og:url"           content="http://www.bestsaxophonewebsiteever.com/bulletproof-saxophone-playing" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="<?php wp_title(); ?>" />
 <meta property="og:description"   content="<? echo get_bloginfo( 'description' ); ?>" />
-<meta property="og:image"         content="http://www.bulletproofsaxophoneplaying.com/wp-content/uploads/bsp-website-product-img.jpg" />	
+<meta property="og:image"         content="http://www.bulletproofsaxophoneplaying.com/wp-content/uploads/bsp-website-product-img.jpg" />
 <!-- <meta property="fb:app_id" content="203897113733044" /> -->
 
-	
+
 <link rel="canonical" href="http://www.bestsaxophonewebsiteever.com/bulletproof-saxophone-playing">
 <title itemprop="name"><?php wp_title(); ?></title>
 
@@ -26,25 +26,30 @@
  */
 ?>
 
-	
-	
+
+
 <!-- wp_header -->
 <?php wp_head(); ?>
 
+<?php // for Infinite Musician 2020 ?>
 <!-- Facebook Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '909075279152522');
-fbq('track', "PageView");
+  !function(f,b,e,v,n,t,s) {
+    if(f.fbq) return; n=f.fbq=function() {
+      n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+    n.queue=[]; t=b.createElement(e); t.async=!0;
+    t.src=v; s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+  }(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','751675342232877');
+  fbq('track','PageView');
+  fbq('dataProcessingOptions',['LDU'],0,0);
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=909075279152522&ev=PageView&noscript=1"
-/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=211589990286087&ev=PageView&noscript=1" /></noscript>
 <!-- End Facebook Pixel Code -->
 
 </head>
@@ -60,10 +65,10 @@ src="https://www.facebook.com/tr?id=909075279152522&ev=PageView&noscript=1"
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=203897113733044&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	
 
-	
-	
+
+
+
 <?php themify_body_start(); //hook ?>
 <div id="pagewrap" class="hfeed site">
 
